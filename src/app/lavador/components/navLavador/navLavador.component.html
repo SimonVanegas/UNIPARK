@@ -1,0 +1,18 @@
+<div id="sidebar" class="container-menu">
+  <div class="logo-content">
+    <h3 class="title-logo">UNIPARK</h3>
+  </div>
+  <ul class="options">
+    <div *ngFor="let menuItem of menuItems; let i = index">
+      <div class="option-flex">
+        <img [src]="menuItem.iconPath" class="icon-users" alt="">
+        <li class="option" (click)="toggleSubOptions(i)">
+          {{ menuItem.title }}
+          <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
+            <li class="sub-option" *ngFor="let subOption of menuItem.subOptions">{{ subOption }}</li>
+          </ul>
+        </li>
+      </div>
+    </div>
+  </ul>
+</div>

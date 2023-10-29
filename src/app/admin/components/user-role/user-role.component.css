@@ -1,0 +1,44 @@
+*{
+  --color-primary: #001a49;
+  --color-secondary: #ecece8;
+  --color-third: #db9340;
+  --padding-container: 100px 0;
+}
+
+.container-user{
+  position: relative;
+  margin-top: 60px;
+  margin-left: 30px;
+  left: 27%;
+  max-width: 60%;
+
+}
+
+.options-user{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 60%;
+}
+
+.user-text{
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name{
+  margin: 0;
+  margin-top: 5px;
+}
+
+.user-role{
+  margin: 0;
+  color: var(--color-third);
+
+}
+
+.icon-users2{
+  color: var(--color-primary);
+  width: 45px;
+}

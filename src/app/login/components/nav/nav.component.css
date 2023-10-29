@@ -1,0 +1,44 @@
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding-container);
+  padding-top: 20px;
+}
+
+.nav {
+  --padding-container: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav__title {
+  font-weight: 300;
+  color: #ecece8;
+}
+
+.nav__link {
+  margin-left: auto;
+  /* para que se pasen a la derecha, esto es por flexbox*/
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  /*para que se ponga al lado de la otra*/
+  grid-auto-columns: max-content;
+  gap: 2em;
+  /*ese es el espaciado que va a tener*/
+}
+
+.nav__items {
+  list-style: none;
+  /*para que quite el estilo de listas*/
+}
+
+.nav__links {
+  text-decoration: none;
+  color: #fff;
+
+  /*aqui le quito ese subrayado feo*/
+}
