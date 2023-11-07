@@ -62,5 +62,6 @@
 .log__other{
   font-weight: bold;
   color: #bf7826;
+  cursor: pointer;
 }
 

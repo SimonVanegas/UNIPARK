@@ -2,32 +2,33 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-user-create',
-  templateUrl: './admin-user-create.component.html',
+  selector: 'app-admin-employee-create',
+  templateUrl: './admin-employee-create.component.html',
   styleUrls: ['../../styles.css']
-  // styleUrls: ['./admin-user-create.component.css']
-})
-export class AdminUserCreateComponent {
 
-  formCreateUser: FormGroup;
+  // styleUrls: ['./admin-employee-create.component.css']
+})
+export class AdminEmployeeCreateComponent {
+
+  formCreateEmployee: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.formCreateUser = this.fb.group({
+    this.formCreateEmployee = this.fb.group({
       name: ['', Validators.required],
       lastNames: ['', Validators.required],
       idUser: ['', Validators.required],
       movil: ['', Validators.required],
-      carId: ['', Validators.required],
-      typeVehicle: ['', Validators.required]
+      workerId: ['', Validators.required],
     });
   }
 
   guardarRespuestas() {
-    if (this.formCreateUser.valid) {
+    if (this.formCreateEmployee.valid) {
       console.log('Formulario válido');
-      console.log('Valores:', this.formCreateUser.value);
+      console.log('Valores:', this.formCreateEmployee.value);
     } else {
       console.log('Formulario inválido');
     }
   }
+
 }

@@ -1,7 +1,7 @@
 <div class="container">
-  <h3 class="title-option">Administrar Clientes</h3>
-  <h4 class="subtitle-option">Editar</h4>
-  <form [formGroup]="formEditUser" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
+  <h3 class="title-option">Administrar Empleado</h3>
+  <h4 class="subtitle-option"> Modificar</h4>
+  <form [formGroup]="formEditEmployee" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
     <div class="flex-form">
       <label class="text-form" for="idUser">Cédula:</label>
       <input class="label-form" type="text" id="idUser" formControlName="idUser">
@@ -13,17 +13,19 @@
             <th>Cedula</th>
             <th>Nombre</th>
             <th>Celular</th>
+            <th>Tipo</th>
             <th>Aceptar</th>
           </tr>
         </thead>
         <tbody>
           <!-- Repite este bloque para cada persona en la lista -->
-          <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.cel }}</td>
-            <td><button (click)="aceptarPersona(user.id)" class="btn">Editar</button>
-              <button (click)="aceptarPersona(user.id)" class="btn">Eliminar</button></td>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.cel }}</td>
+            <td>{{ employee.type }}</td>
+            <td><button (click)="editEmployee(employee.id)" class="btn">Editar</button>
+              <button (click)="deleteEmployee(employee.id)" class="btn">Eliminar</button></td>
           </tr>
         </tbody>
       </table>

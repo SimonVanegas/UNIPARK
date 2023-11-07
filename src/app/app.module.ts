@@ -18,7 +18,7 @@ import { lavadorPage } from './lavador/lavador.module';
     WebPage,
     LoginPage,
     AdminPage,
-    lavadorPage
+    lavadorPage,
   ],
   providers: [],
   bootstrap: [AppComponent]

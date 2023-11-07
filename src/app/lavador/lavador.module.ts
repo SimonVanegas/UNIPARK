@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { ListComponent } from './components/list/list.component';
-import { PageComponent } from './page/page.component';
+import { PageLavadorComponent } from './page/page.component';
 import { CommonModule } from '@angular/common';
 import { NavAdminComponent } from './components/navLavador/navLavador.component';
 import { UserRoleComponent } from './components/user-role/user-role.component';
@@ -9,7 +9,7 @@ import { UserRoleComponent } from './components/user-role/user-role.component';
 @NgModule({
   declarations: [
     ListComponent,
-    PageComponent,
+    PageLavadorComponent,
     NavAdminComponent,
     UserRoleComponent
   ],
@@ -17,7 +17,7 @@ import { UserRoleComponent } from './components/user-role/user-role.component';
     CommonModule
   ],
   exports: [
-    PageComponent
+    PageLavadorComponent
   ],
   providers: [],
 })

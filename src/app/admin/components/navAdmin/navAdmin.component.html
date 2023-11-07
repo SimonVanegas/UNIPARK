@@ -1,51 +1,4 @@
-<!--<div id="sidebar" class="container-menu">
-
-  <div class="logo-content">
-      <h3 class="title-logo">UNIPARK</h3>
-  </div>
-  <ul class="options">
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconUser.svg" class="icon-users" alt="">
-          <li class="option">Administrar Clientes
-              <ul class="sub-options">
-                  <li class="sub-option">Crear</li>
-                  <li class="sub-option">Buscar</li>
-              </ul>
-          </li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/workers.svg" class="icon-users" alt="">
-          <li class="option">Administrar Empleados
-              <ul class="sub-options">
-                  <li class="sub-option">Crear</li>
-                  <li class="sub-option">Buscar</li>
-              </ul>
-          </li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconCar.svg" class="icon-users" alt="">
-          <li class="option">Vehiculos</li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconExit.svg" class="icon-users" alt="">
-          <li class="option">Salidas Parqueadero</li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconJoin.svg" class="icon-users" alt="">
-          <li class="option">Solicitud Parqueadero</li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconWash.svg" class="icon-users" alt="">
-          <li class="option">Solicitud Lavadero</li>
-      </div>
-      <div class="option-flex">
-          <img src="../../../../assets/imagenes/iconClean.svg" class="icon-users" alt="">
-          <li class="option">Lavador</li>
-      </div>
-  </ul>
- </div> -->
-
- <div id="sidebar" class="container-menu">
+<div id="sidebar" class="container-menu">
   <div class="logo-content">
     <h3 class="title-logo">UNIPARK</h3>
   </div>
@@ -53,12 +6,25 @@
     <div *ngFor="let menuItem of menuItems; let i = index">
       <div class="option-flex">
         <img [src]="menuItem.iconPath" class="icon-users" alt="">
-        <li class="option" (click)="toggleSubOptions(i)">
-          {{ menuItem.title }}
-          <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
-            <li class="sub-option" *ngFor="let subOption of menuItem.subOptions">{{ subOption }}</li>
-          </ul>
-        </li>
+        <!-- si hay un path hace este -->
+        <ng-container *ngIf="menuItem.path; else noLink">
+          <li class="option" (click)="toggleSubOptions(i)" [routerLink]="[menuItem.path]" >
+            {{ menuItem.title }}
+            <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
+              <li class="sub-option" *ngFor="let subOption of menuItem.subOptions" (click)="ejecutarAccion(subOption)">{{ subOption }}</li>
+            </ul>
+          </li>
+        </ng-container>
+        <!-- sino hay entonces hace este -->
+        <ng-template #noLink>
+          <li class="option" (click)="toggleSubOptions(i)" >
+            {{ menuItem.title }}
+            <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
+              <li class="sub-option" *ngFor="let subOption of menuItem.subOptions" (click)="ejecutarAccion(subOption)">{{ subOption }}</li>
+            </ul>
+          </li>
+        </ng-template>
+
       </div>
     </div>
   </ul>

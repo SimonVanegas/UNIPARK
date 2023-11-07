@@ -1,3 +1,22 @@
+.container{
+  position: relative;
+  left: 29%;
+  margin-top: 40px;
+  max-width: 67%;
+}
+
+.title-option{
+  font-size: 2em;
+  margin-bottom: 0;
+  color: #001a49;
+}
+
+.subtitle-option{
+  font-weight: 300;
+  font-size: 1.4em;
+  margin-top: 15px;
+  color: #db9340;
+}
 
 .cuadrado {
   width: 100%;
@@ -24,8 +43,4 @@ th, td {
   border-radius: 12px;
   padding: 4px 16px;
   cursor: pointer;
-}
-
-.btn:first-child{
-  margin-right: 20px;
 }

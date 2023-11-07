@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItems } from '../../interfaces/menu-items';
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-admin',
@@ -7,44 +8,76 @@ import { MenuItems } from '../../interfaces/menu-items';
   styleUrls: ['./navAdmin.component.css']
 })
 export class NavAdminComponent {
+  constructor(private router: Router){}
+
   menuItems: MenuItems[] = [
     {
       title: 'Administrar Clientes',
       iconPath: 'assets/imagenes/iconUser.svg',
-      subOptions: ['Crear', 'Buscar']
+      subOptions: ['Crear Cliente', 'Buscar Cliente']
     },
     {
       title: 'Administrar Empleados',
       iconPath: 'assets/imagenes/workers.svg',
-      subOptions: ['Crear', 'Buscar']
+      subOptions: ['Crear Empleado', 'Buscar Empleado']
     },
     {
-      title: 'Vehiculos',
-      iconPath: 'assets/imagenes/iconCar.svg'
-    },
-    {
-      title: 'Salidas Parqueadero',
-      iconPath: 'assets/imagenes/iconExit.svg'
+      title: 'Agregar Vehiculos',
+      iconPath: 'assets/imagenes/iconCar.svg',
+      path:'/admin/add-vehicle'
     },
     {
       title: 'Solicitud Parqueadero',
-      iconPath: 'assets/imagenes/iconJoin.svg'
+      iconPath: 'assets/imagenes/iconJoin.svg',
+      path:'/admin/request-parking'
+    },
+    {
+      title: 'Salidas Parqueadero',
+      iconPath: 'assets/imagenes/iconExit.svg',
+      path:'/admin/out-parking'
     },
     {
       title: 'Solicitud Lavadero',
-      iconPath: 'assets/imagenes/iconWash.svg'
+      iconPath: 'assets/imagenes/iconWash.svg',
+      path:'/admin/request-lavadero'
+
     },
     {
       title: 'Lavador',
-      iconPath: 'assets/imagenes/iconClean.svg'
+      iconPath: 'assets/imagenes/iconClean.svg',
+      path:'/admin/lavador'
+    },
+    {
+      title: 'Salir',
+      iconPath: 'assets/imagenes/personExit.svg',
+      path:'/home'
     }
   ];
 
   showSubOptions: boolean[] = Array(this.menuItems.length).fill(false);
 
   toggleSubOptions(index: number) {
+    console.log(this.menuItems[index])
     if (this.menuItems[index].subOptions) {
       this.showSubOptions[index] = !this.showSubOptions[index];
+    }
+  }
+
+  ejecutarAccion(subOpcion: string) {
+    switch (subOpcion) {
+      case 'Crear Cliente':
+        this.router.navigate(['/admin/create-user'])
+        break;
+      case 'Buscar Cliente':
+        this.router.navigate(['/admin/edit-user'])
+        break;
+      case 'Crear Empleado':
+        this.router.navigate(['/admin/create-employee'])
+        break;
+      case 'Buscar Empleado':
+          this.router.navigate(['/admin/edit-employee'])
+        break;
+      // Agregar más casos según las subopciones que tengas
     }
   }
 }

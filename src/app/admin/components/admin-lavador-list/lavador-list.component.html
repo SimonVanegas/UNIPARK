@@ -1,0 +1,30 @@
+<div class="container">
+  <h3 class="title-option">Lista Tareas</h3>
+  <h4 class="subtitle-option">Lavar</h4>
+  <div class="cuadrado">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Placa</th>
+          <th>Nombre</th>
+          <th>Tipo de Lavado</th>
+          <th>Fecha</th>
+          <th>Aceptar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Repite este bloque para cada persona en la lista -->
+        <tr *ngFor="let client of clients">
+          <td>{{ client.id }}</td>
+          <td>{{ client.carId }}</td>
+          <td>{{ client.name }}</td>
+          <td>{{ client.type }}</td>
+          <td>{{ client.date }}</td>
+          <td><button (click)="aceptarPersona(client.id)" class="btn">Aceptar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

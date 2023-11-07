@@ -47,6 +47,7 @@
   margin-top: 12%;
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 .cta{
@@ -56,8 +57,18 @@
   border: 0.5px solid #0d1470;
   color: #ecece8;
   background-color: #292928;
+  cursor: pointer;
 }
 
-.cta:hover{
-  padding: 9px 17px;;
+.ctaSearch:hover{
+  color: #f8ebca;
 }
+
+.ctaEdit:hover{
+  color: #f8ebca;
+}
+
+.ctaDel:hover{
+  color: #f8ebca;
+}
+
