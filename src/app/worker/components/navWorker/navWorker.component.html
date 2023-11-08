@@ -1,0 +1,31 @@
+<div id="sidebar" class="container-menu">
+  <div class="logo-content">
+    <h3 class="title-logo">UNIPARK</h3>
+  </div>
+  <ul class="options">
+    <div *ngFor="let menuItem of menuItems; let i = index">
+      <div class="option-flex">
+        <img [src]="menuItem.iconPath" class="icon-users" alt="">
+        <!-- si hay un path hace este -->
+        <ng-container *ngIf="menuItem.path; else noLink">
+          <li class="option" (click)="toggleSubOptions(i)" [routerLink]="[menuItem.path]" >
+            {{ menuItem.title }}
+            <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
+              <li class="sub-option" *ngFor="let subOption of menuItem.subOptions" (click)="ejecutarAccion(subOption)">{{ subOption }}</li>
+            </ul>
+          </li>
+        </ng-container>
+        <!-- sino hay entonces hace este -->
+        <ng-template #noLink>
+          <li class="option" (click)="toggleSubOptions(i)" >
+            {{ menuItem.title }}
+            <ul class="sub-options" [ngClass]="{'show-sub-options': showSubOptions[i]}">
+              <li class="sub-option" *ngFor="let subOption of menuItem.subOptions" (click)="ejecutarAccion(subOption)">{{ subOption }}</li>
+            </ul>
+          </li>
+        </ng-template>
+
+      </div>
+    </div>
+  </ul>
+</div>

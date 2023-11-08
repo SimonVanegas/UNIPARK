@@ -1,0 +1,81 @@
+*{
+  --color-primary: #292928;
+  --color-secondary: #ecece8;
+  --color-third: #bf7826;
+  --padding-container: 100px 0;
+
+}
+
+
+.container-menu{
+  width: 25%;
+  height: 100vh;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  position: fixed;
+  top: 0;
+  transition: left 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+.logo-content{
+  display: flex;
+
+}
+
+.title-logo{
+  font-size: 2em;
+}
+
+.option-flex{
+  display: flex;
+
+}
+
+.icon-users{
+  width: 30px;
+}
+
+#toggle-btn {
+position: fixed;
+top: 10px;
+right: 10px;
+background: #fff;
+border: none;
+border-radius: 50%;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+.options {
+  display: flex;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+list-style-type: none;
+padding: 0;
+}
+
+.option {
+margin: 10px;
+font-size: 1em;
+cursor: pointer;
+}
+
+.sub-options {
+display: none;
+list-style-type: none;
+padding: 0;
+
+}
+
+.sub-option {
+margin: 5px 20px;
+cursor: pointer;
+}
+
+.show-sub-options {
+display: block;
+}

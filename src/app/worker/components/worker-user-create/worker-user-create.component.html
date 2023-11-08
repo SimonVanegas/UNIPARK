@@ -1,0 +1,37 @@
+<div class="container">
+  <h3 class="title-option">Administrar Clientes</h3>
+  <h4 class="subtitle-option">Crear</h4>
+  <form [formGroup]="formCreateUser" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
+    <div class="flex-form">
+      <label class="text-form" for="name">Nombre:</label>
+      <input class="label-form" type="text" id="name" formControlName="name">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="lastNames">Apellidos:</label>
+      <input class="label-form" type="lastNames" id="lastNames" formControlName="lastNames">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="idUser">Cédula:</label>
+      <input class="label-form" type="text" id="idUser" formControlName="idUser">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="movil">Celular:</label>
+      <input class="label-form" type="text" id="movil" formControlName="movil">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="carId">Placa Vehículo:</label>
+      <input class="label-form" type="text" id="carId" formControlName="carId">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="typeVehicle">Tipo Vehículo:</label>
+      <select class="label-form" id="typeVehicle" formControlName="typeVehicle">
+        <option value="1">Carro</option>
+        <option value="2">Moto</option>
+        <option value="3">Camioneta</option>
+      </select>
+    </div>
+    <div class="btn-flex">
+      <button type="submit" class="cta">Guardar</button>
+    </div>
+  </form>
+</div>

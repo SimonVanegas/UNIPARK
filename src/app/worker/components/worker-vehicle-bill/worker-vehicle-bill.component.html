@@ -1,0 +1,26 @@
+<div class="container">
+  <h3 class="title-option">Parqueadero</h3>
+  <h4 class="subtitle-option">Factura</h4>
+  <form [formGroup]="formOutVehicle" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
+    <div class="flex-form">
+      <label class="text-form" for="idUser">Cédula:</label>
+      <input class="label-form" type="text" id="idUser" formControlName="idUser">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="carId">Placa:</label>
+      <input class="label-form" type="text" id="carId" formControlName="carId">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="dateIn">Fecha Ingreso:</label>
+      <input class="label-form" type="text" id="dateIn" formControlName="dateIn">
+    </div>
+    <div class="flex-form">
+      <label class="text-form" for="dateOut">Fecha Salida:</label>
+      <input class="label-form" type="text" id="dateOut" formControlName="dateOut">
+    </div>
+    <div class="btn-flex">
+      <button type="submit" class="cta" >Siguiente</button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>
