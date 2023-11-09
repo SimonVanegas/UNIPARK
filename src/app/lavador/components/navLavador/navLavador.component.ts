@@ -10,7 +10,13 @@ export class NavAdminComponent {
   menuItems: MenuItems[] = [
     {
       title: 'Lavador',
-      iconPath: 'assets/imagenes/iconClean.svg'
+      iconPath: 'assets/imagenes/iconClean.svg',
+      path:'/lavador/list'
+    },
+    {
+      title: 'Salir',
+      iconPath: 'assets/imagenes/personExit.svg',
+      path:'/home'
     }
   ];
 

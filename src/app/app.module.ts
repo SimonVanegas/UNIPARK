@@ -8,6 +8,7 @@ import { LoginPage } from './login/login.module';
 import { AdminPage } from './admin/admin.module';
 import { lavadorPage } from './lavador/lavador.module';
 import { WorkerPage } from './worker/worker.module';
+import { UserPage } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WorkerPage } from './worker/worker.module';
     LoginPage,
     AdminPage,
     lavadorPage,
-    WorkerPage
+    WorkerPage,
+    UserPage
   ],
   providers: [],
   bootstrap: [AppComponent]

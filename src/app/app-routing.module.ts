@@ -21,6 +21,10 @@ import { WorkerVehicleAddComponent } from './worker/components/worker-vehicle-ad
 import { WorkerVehicleRequestComponent } from './worker/components/worker-vehicle-request/worker-vehicle-request.component';
 import { WorkerVehicleOutComponent } from './worker/components/worker-vehicle-out/worker-vehicle-out.component';
 import { WorkerVehicleBillComponent } from './worker/components/worker-vehicle-bill/worker-vehicle-bill.component';
+import { PageUserComponent } from './user/page/page.component';
+import { UserVehicleAddComponent } from './user/components/user-vehicle-add/user-vehicle-add.component';
+import { UserVehicleReqComponent } from './user/components/user-vehicle-req/user-vehicle-req.component';
+import { UserLavaderoReqComponent } from './user/components/user-lavadero-req/user-lavadero-req.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -41,7 +45,10 @@ const routes: Routes = [
     {path:'request-lavadero', component:AdminLavaderoRequestComponent},
 
   ]},
-  {path:'lavador', component:PageLavadorComponent},
+  {path:'lavador', component:PageLavadorComponent,
+  children:[
+    {path:'list', component:WorkerUserCreateComponent}
+  ]},
   {path:'worker', component:PageWorkerComponent,
   children:[
     {path:'create-user', component:WorkerUserCreateComponent},
@@ -50,6 +57,12 @@ const routes: Routes = [
     {path:'request-parking', component:WorkerVehicleRequestComponent},
     {path:'out-parking', component:WorkerVehicleOutComponent},
     {path:'bill', component:WorkerVehicleBillComponent},
+  ]},
+  {path:'user', component:PageUserComponent,
+  children:[
+    {path:'add-vehicle', component:UserVehicleAddComponent},
+    {path:'request-parking', component:UserVehicleReqComponent},
+    {path:'request-lavadero', component:UserLavaderoReqComponent},
   ]},
 
 ];
