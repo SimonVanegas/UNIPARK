@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-user-lavadero-req',
   templateUrl: './user-lavadero-req.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['../../../styles.css']
 })
 export class UserLavaderoReqComponent {
   formOutVehicle: FormGroup;

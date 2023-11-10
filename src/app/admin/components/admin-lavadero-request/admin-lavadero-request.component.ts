@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-admin-lavadero-request',
   templateUrl: './admin-lavadero-request.component.html',
-  styleUrls: ['./admin-lavadero-request.component.css','../../styles.css']
+  styleUrls: ['./admin-lavadero-request.component.css','../../../styles.css']
 })
 export class AdminLavaderoRequestComponent {
   formOutVehicle: FormGroup;

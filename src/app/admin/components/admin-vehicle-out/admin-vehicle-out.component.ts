@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-vehicle-out',
   templateUrl: './admin-vehicle-out.component.html',
-  styleUrls: ['../../styles.css','./admin-vehicle-out.component.css']
+  styleUrls: ['../../../styles.css','./admin-vehicle-out.component.css']
 })
 export class AdminVehicleOutComponent {
   formOutVehicle: FormGroup;

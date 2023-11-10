@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-admin-vehicle-request',
   templateUrl: './admin-vehicle-request.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['../../../styles.css']
 })
 export class AdminVehicleRequestComponent {
   formRequestVehicle: FormGroup;

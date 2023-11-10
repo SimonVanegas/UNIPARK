@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-user-vehicle-add',
   templateUrl: './user-vehicle-add.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['../../../styles.css']
 })
 export class UserVehicleAddComponent {
   formCreateVehicle: FormGroup;

@@ -6,7 +6,7 @@ import { Users } from '../../interfaces/user';
 @Component({
   selector: 'app-admin-user-edit',
   templateUrl: './admin-user-edit.component.html',
-  styleUrls: ['../../styles.css', './admin-user-edit.component.css']
+  styleUrls: ['../../../styles.css', './admin-user-edit.component.css']
   // styleUrls: ['./admin-user-edit.component.css']
 })
 export class AdminUserEditComponent {

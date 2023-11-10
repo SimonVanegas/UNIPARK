@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-admin-employee-create',
   templateUrl: './admin-employee-create.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['../../../styles.css']
 
   // styleUrls: ['./admin-employee-create.component.css']
 })

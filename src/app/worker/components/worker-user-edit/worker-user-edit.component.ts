@@ -6,7 +6,7 @@ import { Users } from '../../interfaces/user';
 @Component({
   selector: 'app-worker-user-edit',
   templateUrl: './worker-user-edit.component.html',
-  styleUrls: ['../../styles.css', './worker-user-edit.component.css']
+  styleUrls: ['../../../styles.css', './worker-user-edit.component.css']
   // styleUrls: ['./admin-user-edit.component.css']
 })
 

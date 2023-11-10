@@ -5,7 +5,7 @@ import { Employees } from '../../interfaces/employees';
 @Component({
   selector: 'app-admin-empleado-edit',
   templateUrl: './admin-empleado-edit.component.html',
-  styleUrls: ['../../styles.css','./admin-empleado-edit.component.css']
+  styleUrls: ['../../../styles.css','./admin-empleado-edit.component.css']
   // styleUrls: ['./admin-empleado-edit.component.css']
 })
 export class AdminEmployeeEditComponent {

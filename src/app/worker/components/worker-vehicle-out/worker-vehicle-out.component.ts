@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-worker-vehicle-out',
   templateUrl: './worker-vehicle-out.component.html',
-  styleUrls: ['../../styles.css','./worker-vehicle-out.component.css']
+  styleUrls: ['../../../styles.css','./worker-vehicle-out.component.css']
 })
 export class WorkerVehicleOutComponent {
 
