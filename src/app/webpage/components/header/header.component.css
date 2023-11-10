@@ -1,0 +1,133 @@
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*para que se centre verticalmente*/
+  /* overflow: hidden; */
+  /*y todo lo que se salga, se esconda */
+  padding: var(--padding-container);
+}
+.nav {
+  --padding-container: 0;
+
+  height: 100%;
+  display: flex;
+  /*pa ponerlos uno al lado del otro*/
+  align-items: center;
+}
+
+.nav__title {
+  font-weight: 300;
+}
+
+.nav__link {
+  margin-left: auto;
+  /* para que se pasen a la derecha, esto es por flexbox*/
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  /*para que se ponga al lado de la otra*/
+  grid-auto-columns: max-content;
+  gap: 2em;
+  /*ese es el espaciado que va a tener*/
+}
+
+.nav__items {
+  list-style: none;
+  /*para que quite el estilo de listas*/
+}
+
+.nav__links {
+  color: #fff;
+  text-decoration: none;
+  /*aqui le quito ese subrayado feo*/
+}
+
+.nav__menu {
+  margin-left: auto;
+  cursor: pointer;
+  /*para que cada que pase el mause se active el cursor*/
+  display: none;
+}
+
+.nav__img {
+  display: block;
+  width: 30px;
+}
+
+.nav__close {
+  display: var(--show, none);
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  /*por problemas de ipad*/
+  max-height: 800px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+/*se crea este a partir de hero ya que si se da el caso de que position fixed es hijo de clip path, en vez de fijarse al navegador, se va a fijar en clip path*/
+.hero::before {
+  content: "";
+  position: absolute;
+  /* para que se posicione a su papa hero*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../../../../assets/imagenes/portada.jpg');
+  background-size: cover;
+  /*para que adapte el tamaño de la pag*/
+  clip-path: polygon(100% 0, 100% 80%, 75% 75%, 50% 80%, 25% 75%, 0 80%, 0 0);
+
+  z-index: -1;
+  /*para que se vea el texto*/
+}
+
+/* Hero container */
+
+.hero__container {
+  max-width: 800px;
+  --padding-container: 0;
+  display: grid;
+  grid-auto-rows: max-content;
+  /*pa que no ocupe mas de lo que debe*/
+  align-content: center;
+  gap: 1em;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 3rem;
+}
+
+.hero__paragraph {
+  margin-bottom: 20px;
+  /*pa que debajo del parrafo, haya un pequeño espacio*/
+}
+
+.cta {
+  display: inline-block;
+  background-color: #2091f9;
+  justify-self: center;
+  /*que pinte solo el espacio que ocupa*/
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 30px;
+  /*le da el espacio que le rodea*/
+  border-radius: 32px;
+  /*pa darle borde*/
+
+}

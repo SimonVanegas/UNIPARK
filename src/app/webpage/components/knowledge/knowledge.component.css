@@ -1,0 +1,69 @@
+
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*para que se centre verticalmente*/
+  /* overflow: hidden; */
+  /*y todo lo que se salga, se esconda */
+  padding: var(--padding-container);
+}
+.knowledge {
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  overflow: hidden;
+  padding-top: 85px;
+  padding-bottom: 85px;
+  margin-top: 80px;
+}
+
+.knowledge__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  gap: 2em;
+
+}
+
+.knowledge__paragraph{
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.knowledge__picture{
+  max-width: 500px;
+}
+
+.knowledge__img{
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+
+.cta {
+  display: inline-block;
+  background-color: #2091f9;
+  justify-self: center;
+  /*que pinte solo el espacio que ocupa*/
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 30px;
+  /*le da el espacio que le rodea*/
+  border-radius: 32px;
+  /*pa darle borde*/
+
+}
+
+.subtitle {
+  color: var(--color-title);
+  font-size: 2rem;
+  margin-bottom: 25px;
+}

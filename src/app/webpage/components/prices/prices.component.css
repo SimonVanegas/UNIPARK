@@ -1,0 +1,96 @@
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*para que se centre verticalmente*/
+  /* overflow: hidden; */
+  /*y todo lo que se salga, se esconda */
+  padding: var(--padding-container);
+}
+.subtitle {
+  color: var(--color-title);
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.price{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.price__table{
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  justify-content: space-evenly;/*Da un espaciado equitativamente a todas las esquinas hablando en manera horizontal*/
+  align-items: center;
+}
+
+.price__element{
+  background-color: #e5e5f7;
+  text-align: center;
+  border-radius: 10px;
+  width: 330px;
+  padding: 40px;
+  --color-plan: #696871;
+  --color-price: #1d293f;
+  --bg-cta: #fff;
+  --color-cta: #5454d4;
+  --color-items: #696871;
+}
+
+.price__element--best{
+  width: 370px;
+  padding: 60px 40px;
+  background-color: #ff7143;
+  --color-plan: rgb(255 255 255 / 75%);
+  --color-price: #fff;
+  --bg-cta: #9f3919;
+  --color-cta: #fff;
+  --color-items: #fff;
+}
+
+.price__name{
+  color: var(--color-plan);
+  margin-bottom: 15px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.price__price{
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--color-price);
+  margin-bottom: 10px;
+}
+
+.price__items{
+  display: grid;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--color-items);
+}
+
+.price__features{
+  margin-top: 0.6em;
+}
+
+.price__cta{
+  display: block;
+  padding: 20px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: var(--bg-cta);
+  font-weight: 600;
+  color: var(--color-cta);
+  box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+  transition:  .3s ease-in-out;
+  cursor: pointer;
+  margin-top: 1.9em;
+}

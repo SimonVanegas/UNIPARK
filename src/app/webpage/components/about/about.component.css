@@ -1,0 +1,56 @@
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*para que se centre verticalmente*/
+  /* overflow: hidden; */
+  /*y todo lo que se salga, se esconda */
+  padding: var(--padding-container);
+}
+
+/* About */
+
+.about {
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--color-title);
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.about__icons {
+  display: grid;
+  gap: 1em;
+  justify-items: center;
+  width: 260px;
+  overflow: hidden;
+  margin: 0 auto;
+  grid-template-rows: 40px 40px auto;
+}
+
+.about__icon {
+  width: 40px;
+}
+
+.about__main {
+  padding-top: 80px;
+  /*pa darle espacio desde el parrafo*/
+  display: grid;
+  width: 90;
+  margin: 0 auto;
+  gap: 1em;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+  /*Columnas dinamicas con un minimo de 260 px por columna*/
+}
+
+.about__paragraph {
+  line-height: 1.7;
+}

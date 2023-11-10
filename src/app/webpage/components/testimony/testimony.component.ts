@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-testimony',
   templateUrl: './testimony.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['./testimony.component.css']
 })
 export class TestimonyComponent implements OnInit{
 

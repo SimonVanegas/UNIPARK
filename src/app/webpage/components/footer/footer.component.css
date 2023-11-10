@@ -1,0 +1,107 @@
+
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*para que se centre verticalmente*/
+  /* overflow: hidden; */
+  /*y todo lo que se salga, se esconda */
+  padding: var(--padding-container);
+}
+
+
+.nav {
+  --padding-container: 0;
+
+  height: 100%;
+  display: flex;
+  /*pa ponerlos uno al lado del otro*/
+  align-items: center;
+}
+
+.nav__title {
+  font-weight: 300;
+}
+
+.nav__link {
+  margin-left: auto;
+  /* para que se pasen a la derecha, esto es por flexbox*/
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  /*para que se ponga al lado de la otra*/
+  grid-auto-columns: max-content;
+  gap: 2em;
+  /*ese es el espaciado que va a tener*/
+}
+
+.nav__items {
+  list-style: none;
+  /*para que quite el estilo de listas*/
+}
+
+.nav__links {
+  color: #fff;
+  text-decoration: none;
+  /*aqui le quito ese subrayado feo*/
+}
+
+.footer{
+  margin-top: 100px;
+  padding-top: 80px;
+  background-color: #1d293f;
+}
+
+.footer__title{
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.footer__title, .footer__newsletter{
+  color: #fff;
+}
+
+.footer__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 60px;
+}
+
+.nav--footer{
+  padding-bottom: 20px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav__link--footer{
+  display: flex;
+  margin: 0;
+  margin-right: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__copy{
+  --padding-container: 30px 0;
+  text-align: center;
+  color: white;
+}
+
+.footer__copyright{
+  font-weight: 300;
+  font-size: medium;
+}
+
+.footer__icons{
+  margin-bottom: 10px;
+}
+
