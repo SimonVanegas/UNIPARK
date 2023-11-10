@@ -19,8 +19,13 @@ export class NavUserComponent {
     },
     {
       title: 'Solicitud Parqueadero',
-      iconPath: 'assets/imagenes/iconJoin.svg',
+      iconPath: 'assets/imagenes/in.svg',
       path:'/user/request-parking'
+    },
+    {
+      title: 'Entradas Parqueadero',
+      iconPath: 'assets/imagenes/iconJoin.svg',
+      path:'/user/in-parking'
     },
     {
       title: 'Solicitud Lavadero',

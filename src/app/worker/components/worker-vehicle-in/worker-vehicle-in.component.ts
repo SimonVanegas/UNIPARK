@@ -2,22 +2,20 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-vehicle-request',
-  templateUrl: './admin-vehicle-request.component.html',
+  selector: 'app-worker-vehicle-in',
+  templateUrl: './worker-vehicle-in.component.html',
   styleUrls: ['../../styles.css']
 })
-export class AdminVehicleRequestComponent {
+export class WorkerVehicleInComponent {
   formRequestVehicle: FormGroup;
-  isDisabled: boolean = true;
 
   constructor(private fb: FormBuilder) {
     this.formRequestVehicle = this.fb.group({
       idUser: ['', Validators.required],
       carId: ['', Validators.required],
-      date: ['', Validators.required],
-      cell: [{ value: '', disabled: this.isDisabled }, Validators.required],
+      // name: ['', Validators.required],
+      // date: ['', Validators.required],
     });
-
   }
 
   guardarRespuestas() {
@@ -29,3 +27,4 @@ export class AdminVehicleRequestComponent {
     }
   }
 }
+

@@ -25,6 +25,9 @@ import { PageUserComponent } from './user/page/page.component';
 import { UserVehicleAddComponent } from './user/components/user-vehicle-add/user-vehicle-add.component';
 import { UserVehicleReqComponent } from './user/components/user-vehicle-req/user-vehicle-req.component';
 import { UserLavaderoReqComponent } from './user/components/user-lavadero-req/user-lavadero-req.component';
+import { AdminVehicleInComponent } from './admin/components/admin-vehicle-in/admin-vehicle-in.component';
+import { WorkerVehicleInComponent } from './worker/components/worker-vehicle-in/worker-vehicle-in.component';
+import { UserVehicleInComponent } from './user/components/user-vehicle-in/user-vehicle-in.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -40,6 +43,7 @@ const routes: Routes = [
     {path:'edit-employee', component:AdminEmployeeEditComponent},
     {path:'add-vehicle', component:AdminVehicleAddComponent},
     {path:'request-parking', component:AdminVehicleRequestComponent},
+    {path:'in-parking', component:AdminVehicleInComponent},
     {path:'out-parking', component:AdminVehicleOutComponent},
     {path:'bill', component:AdminVehicleBillComponent},
     {path:'request-lavadero', component:AdminLavaderoRequestComponent},
@@ -55,6 +59,7 @@ const routes: Routes = [
     {path:'edit-user', component:WorkerUserEditComponent},
     {path:'add-vehicle', component:WorkerVehicleAddComponent},
     {path:'request-parking', component:WorkerVehicleRequestComponent},
+    {path:'in-parking', component:WorkerVehicleInComponent},
     {path:'out-parking', component:WorkerVehicleOutComponent},
     {path:'bill', component:WorkerVehicleBillComponent},
   ]},
@@ -62,6 +67,7 @@ const routes: Routes = [
   children:[
     {path:'add-vehicle', component:UserVehicleAddComponent},
     {path:'request-parking', component:UserVehicleReqComponent},
+    {path:'in-parking', component:UserVehicleInComponent},
     {path:'request-lavadero', component:UserLavaderoReqComponent},
   ]},
 

@@ -11,6 +11,7 @@ import { WorkerVehicleAddComponent } from './components/worker-vehicle-add/worke
 import { WorkerVehicleRequestComponent } from './components/worker-vehicle-request/worker-vehicle-request.component';
 import { WorkerVehicleOutComponent } from './components/worker-vehicle-out/worker-vehicle-out.component';
 import { WorkerVehicleBillComponent } from './components/worker-vehicle-bill/worker-vehicle-bill.component';
+import { WorkerVehicleInComponent } from './components/worker-vehicle-in/worker-vehicle-in.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WorkerVehicleBillComponent } from './components/worker-vehicle-bill/wor
     WorkerVehicleAddComponent,
     WorkerVehicleRequestComponent,
     WorkerVehicleOutComponent,
-    WorkerVehicleBillComponent
+    WorkerVehicleBillComponent,
+    WorkerVehicleInComponent
   ],
   imports: [
     CommonModule,

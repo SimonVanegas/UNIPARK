@@ -23,8 +23,13 @@ export class NavWorkerComponent {
     },
     {
       title: 'Solicitud Parqueadero',
+      iconPath: 'assets/imagenes/in.svg',
+      path:'/admin/request-parking'
+    },
+    {
+      title: 'Entradas Parqueadero',
       iconPath: 'assets/imagenes/iconJoin.svg',
-      path:'/worker/request-parking'
+      path:'/admin/in-parking'
     },
     {
       title: 'Salidas Parqueadero',

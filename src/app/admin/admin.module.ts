@@ -16,6 +16,7 @@ import { AdminVehicleRequestComponent } from './components/admin-vehicle-request
 import { AdminVehicleOutComponent } from './components/admin-vehicle-out/admin-vehicle-out.component';
 import { AdminVehicleBillComponent } from './components/admin-vehicle-bill/admin-vehicle-bill.component';
 import { AdminLavaderoRequestComponent } from './components/admin-lavadero-request/admin-lavadero-request.component';
+import { AdminVehicleInComponent } from './components/admin-vehicle-in/admin-vehicle-in.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdminLavaderoRequestComponent } from './components/admin-lavadero-reque
     AdminVehicleRequestComponent,
     AdminVehicleOutComponent,
     AdminVehicleBillComponent,
-    AdminLavaderoRequestComponent
+    AdminLavaderoRequestComponent,
+    AdminVehicleInComponent
   ],
   imports: [
     CommonModule,

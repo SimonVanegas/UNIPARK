@@ -7,16 +7,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['../../styles.css']
 })
 export class WorkerVehicleRequestComponent {
-
   formRequestVehicle: FormGroup;
+  isDisabled: boolean = true;
 
   constructor(private fb: FormBuilder) {
     this.formRequestVehicle = this.fb.group({
       idUser: ['', Validators.required],
       carId: ['', Validators.required],
-      // name: ['', Validators.required],
-      // date: ['', Validators.required],
+      date: ['', Validators.required],
+      cell: [{ value: '', disabled: this.isDisabled }, Validators.required],
     });
+
   }
 
   guardarRespuestas() {
