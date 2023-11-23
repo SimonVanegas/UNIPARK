@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { NavAdminComponent } from './components/navAdmin/navAdmin.component';
 import { PageAdminComponent } from './page/page.component';
@@ -39,7 +41,8 @@ import { AdminVehicleInComponent } from './components/admin-vehicle-in/admin-veh
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    HttpClientModule
   ],
   exports: [
     PageAdminComponent

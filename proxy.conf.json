@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://api-unipark-production.up.railway.app",
+    "secure": false
+  }
+}

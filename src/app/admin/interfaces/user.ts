@@ -1,5 +1,6 @@
 export interface Users{
-  id: number;
-  name: string;
-  cel:number
+  cedula: number;
+  nombres: string;
+  apellidos: string;
+  celular:number
 }

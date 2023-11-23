@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Users } from '../../interfaces/user';
+import { ApiClientService } from '../../services/api-client.service';
 
 
 @Component({
@@ -12,25 +13,28 @@ import { Users } from '../../interfaces/user';
 export class AdminUserEditComponent {
   formEditUser: FormGroup;
   showList = false;
+  users: Users[]=[] ;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private clientAPI : ApiClientService) {
     this.formEditUser = this.fb.group({
       idUser: ['', Validators.required]
     });
   }
 
-  users:Users[] = [
-    { id: 1001230023, name: 'Pedro Escamoso', cel:3127962709 },
-  ];
 
   guardarRespuestas() {
     if (this.formEditUser.valid) {
-      console.log('Formulario válido');
-      console.log('Valores:', this.formEditUser.value);
+      const client : number = this.formEditUser.get('idUser')?.value;
+      this.clientAPI.getUser(client).subscribe(data => this.showData(data));
       this.showList = true;
     } else {
       console.log('Formulario inválido');
     }
+  }
+
+  showData({ cedula, nombres, apellidos, celular}:Users){
+    this.users=[{cedula, nombres, apellidos, celular}];
+    this.showList = true;
   }
 
   aceptarPersona(id: number) {

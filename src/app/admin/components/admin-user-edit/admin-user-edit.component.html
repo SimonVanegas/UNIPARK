@@ -4,7 +4,7 @@
   <form [formGroup]="formEditUser" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
     <div class="flex-form">
       <label class="text-form" for="idUser">Cédula:</label>
-      <input class="label-form" type="text" id="idUser" formControlName="idUser">
+      <input class="label-form" type="number" id="idUser" formControlName="idUser">
     </div>
     <div class="cuadrado" *ngIf="showList">
       <table>
@@ -19,11 +19,11 @@
         <tbody>
           <!-- Repite este bloque para cada persona en la lista -->
           <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.cel }}</td>
-            <td><button (click)="aceptarPersona(user.id)" class="btn">Editar</button>
-              <button (click)="aceptarPersona(user.id)" class="btn">Eliminar</button></td>
+            <td>{{ user.cedula }}</td>
+            <td>{{ user.nombres }}</td>
+            <td>{{ user.celular }}</td>
+            <td><button (click)="aceptarPersona(user.cedula)" class="btn">Editar</button>
+              <button (click)="aceptarPersona(user.cedula)" class="btn">Eliminar</button></td>
           </tr>
         </tbody>
       </table>
