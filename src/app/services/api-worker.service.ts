@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
+import { Employees } from '../admin/interfaces/employees';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +12,20 @@ export class ApiWorkerService {
 
   constructor(private http: HttpClient) {}
 
-  newWorker(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newWorker(user: Employees){
+    return this.http.post<Employees>(this.apiUrl, user)
   }
 
-  getWorkers(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getWorkers(): Observable<Employees[]> {
+    return this.http.get<Employees[]>(this.apiUrl);
   }
 
-  getWorker(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getWorker(id: number): Observable<Employees> {
+    return this.http.get<Employees>(`${this.apiUrl}/${id}`);
   }
 
-  putWorker(user: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${user.id}`, user, {
+  patchWorker(user: any): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/${user.cedula}`, user, {
       headers: { 'Content-Type': 'application/json' }
     });
   }

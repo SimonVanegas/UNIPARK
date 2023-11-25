@@ -13,25 +13,40 @@
             <th>Cedula</th>
             <th>Nombre</th>
             <th>Celular</th>
-            <th>Tipo</th>
             <th>Aceptar</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Repite este bloque para cada persona en la lista -->
-          <tr *ngFor="let employee of employees">
-            <td>{{ employee.id }}</td>
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.cel }}</td>
-            <td>{{ employee.type }}</td>
-            <td><button (click)="editEmployee(employee.id)" class="btn">Editar</button>
-              <button (click)="deleteEmployee(employee.id)" class="btn">Eliminar</button></td>
-          </tr>
+            <!-- Repite este bloque para cada persona en la lista -->
+            <tr *ngFor="let employee of employees">
+              <td>{{ employee.cedula }}</td>
+              <td>{{ employee.nombres + " " + employee.apellidos }}</td>
+              <td>{{ employee.celular }}</td>
+              <td><button (click)="editEmployee(employee.cedula)" class="btn">Editar</button>
+                <button (click)="deleteEmployee(employee.cedula)" class="btn">Eliminar</button></td>
+            </tr>
         </tbody>
       </table>
     </div>
     <div class="btn-flex">
       <button type="submit" class="cta ctaSearch">Buscar</button>
     </div>
+    <ng-container *ngIf="showEdit">
+      <div class="flex-form">
+        <label class="text-form" for="name">Nombre:</label>
+        <input class="label-form" type="text" id="name" formControlName="name" value="">
+      </div>
+      <div class="flex-form">
+        <label class="text-form" for="lastNames">Apellidos:</label>
+        <input class="label-form" type="lastNames" id="lastNames" formControlName="lastNames">
+      </div>
+      <div class="flex-form">
+        <label class="text-form" for="movil">Celular:</label>
+        <input class="label-form" type="text" id="movil" formControlName="movil">
+      </div>
+      <div class="btn-flex">
+        <button (click)="saveUser()" class="cta">Guardar</button>
+      </div>
+    </ng-container>
   </form>
   </div>

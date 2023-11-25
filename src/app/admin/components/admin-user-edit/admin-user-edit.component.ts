@@ -13,17 +13,21 @@ import { ApiClientService } from '../../../services/api-client.service';
 export class AdminUserEditComponent {
   formEditUser: FormGroup;
   showList = false;
+  showEdit = false;
   users: Users[]=[] ;
 
   constructor(private fb: FormBuilder, private clientAPI : ApiClientService) {
     this.formEditUser = this.fb.group({
-      idUser: ['', Validators.required]
+      idUser: ['', Validators.required],
+      name: ['', ],
+      lastNames: ['', ],
+      movil: ['', ],
     });
   }
 
-
   guardarRespuestas() {
     if (this.formEditUser.valid) {
+      this.showEdit = false;
       const client : number = this.formEditUser.get('idUser')?.value;
       this.clientAPI.getUser(client).subscribe(data => this.showData(data));
       this.showList = true;
@@ -34,19 +38,42 @@ export class AdminUserEditComponent {
 
   showData({ cedula, nombres, apellidos, celular}:Users){
     this.users=[{cedula, nombres, apellidos, celular}];
+    this.formEditUser.get('name')?.setValue(nombres);
+    this.formEditUser.get('lastNames')?.setValue(apellidos);
+    this.formEditUser.get('movil')?.setValue(celular);
     this.showList = true;
   }
 
-  aceptarPersona(id: number) {
-    // Lógica para aceptar persona con el ID proporcionado
-    console.log(`Persona aceptada con ID: ${id}`);
+  edit(id : number){
+
+    this.showList = false;
+
+    this.showEdit = true;
   }
 
-  edit(){
-    console.log("Presiono editar")
+  deleteU(id : number){
+    console.log(id)
+    this.clientAPI.deleteUser(id).subscribe(data => console.log(data));
+
   }
 
-  deleteU(){
-    console.log("Presiono editar")
+  saveUser(){
+    if(this.formEditUser.get('idUser')?.value && this.formEditUser.get('name')?.value && this.formEditUser.get('lastNames')?.value && this.formEditUser.get('movil')?.value){
+      const user : Users ={
+        "cedula": this.formEditUser.get('idUser')?.value,
+        "nombres": this.formEditUser.get('name')?.value,
+        "apellidos": this.formEditUser.get('lastNames')?.value,
+        "celular": this.formEditUser.get('movil')?.value,
+      }
+      this.clientAPI.patchUser(user).subscribe(data => console.log(data));
+      console.log('Formulario valido');
+      this.showList = false;
+
+      this.showEdit = false;
+      this.formEditUser.reset()
+
+    } else {
+      console.log('Formulario inválido');
+    }
   }
 }

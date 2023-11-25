@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Clients } from '../../interfaces/clients';
+import { Lavadero } from '../../interfaces/lavadero';
+import { ApiLavaderoService } from 'src/app/services/api-lavadero.service';
+import { ApiTipoLavadoService } from 'src/app/services/api-tipo-lavado.service';
+import { TypeLavado } from '../../interfaces/typeLavado';
 
 @Component({
   selector: 'app-list-lavador',
@@ -7,20 +11,21 @@ import { Clients } from '../../interfaces/clients';
   styleUrls: ['./lavador-list.component.css']
 })
 export class LavadorListComponent {
-  clients:Clients[] = [
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-    { id: 1, carId: 'ABC123', name: 'Pedro Escamoso', type: 'Completo', date: '2023-10-31' },
-  ];
+  lavados:Lavadero[] = [];
+  tipoLavados: TypeLavado[] = [];
+
+  constructor(private lavadero : ApiLavaderoService, private tipoLavadero : ApiTipoLavadoService) {
+    this.lavadero.getLavaderos().subscribe(data => {
+      this.lavados=data;
+    })
+    this.tipoLavadero.getTiposLavado().subscribe(data => this.tipoLavados=data)
+
+  }
+
+  setTipoLavado(id:number){
+    const tipoLavado = this.tipoLavados.find((item) => item.id_tipo === id);
+    return tipoLavado ? tipoLavado.descripcion_lavado : 'Desconocido';
+  }
 
   aceptarPersona(id: number) {
     // Lógica para aceptar persona con el ID proporcionado

@@ -25,10 +25,12 @@
     <div class="flex-form">
       <label class="text-form" for="typeVehicle">Tipo Vehículo:</label>
       <select class="label-form" id="typeVehicle" formControlName="typeVehicle">
+        <option *ngFor="let type of types" [value]="type.id_tipo">{{ type.descripcion_vehiculo }}</option>
+      </select>
+      <!-- <select class="label-form" id="typeVehicle" formControlName="typeVehicle">
         <option value="1">Carro</option>
         <option value="2">Moto</option>
-        <option value="3">Camioneta</option>
-      </select>
+      </select> -->
     </div>
     <div class="btn-flex">
       <button type="submit" class="cta">Guardar</button>

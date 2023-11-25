@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
+import { TypeLavado } from '../admin/interfaces/typeLavado';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,16 @@ export class ApiTipoLavadoService {
 
   constructor(private http: HttpClient) {}
 
-  newTipoLavado(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newTipoLavado(user: TypeLavado){
+    return this.http.post<TypeLavado>(this.apiUrl, user)
   }
 
-  getTiposLavado(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getTiposLavado(): Observable<TypeLavado[]> {
+    return this.http.get<TypeLavado[]>(this.apiUrl);
   }
 
-  getTipoLavado(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getTipoLavado(id: number): Observable<TypeLavado> {
+    return this.http.get<TypeLavado>(`${this.apiUrl}/${id}`);
   }
 
   patchTipoLavado(user: any): Observable<any> {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
+import { TypeEmployee } from '../admin/interfaces/typeEmployee';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +12,16 @@ export class ApiTypeEmployeeService {
 
   constructor(private http: HttpClient) {}
 
-  newTypeEmployee(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newTypeEmployee(user: TypeEmployee){
+    return this.http.post<TypeEmployee>(this.apiUrl, user)
   }
 
-  getTypesEmployee(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getTypesEmployee(): Observable<TypeEmployee[]> {
+    return this.http.get<TypeEmployee[]>(this.apiUrl);
   }
 
-  getTypeEmployee(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getTypeEmployee(id: number): Observable<TypeEmployee> {
+    return this.http.get<TypeEmployee>(`${this.apiUrl}/${id}`);
   }
 
   patchTypeEmployee(user: any): Observable<any> {

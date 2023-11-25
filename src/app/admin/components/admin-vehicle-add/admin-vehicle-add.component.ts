@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TypeVehicle } from '../../interfaces/typeVehicle';
+import { ApiVehicleService } from 'src/app/services/api-vehicle.service';
+import { ApiTypeVehicleService } from 'src/app/services/api-type-vehicle.service';
+import { Vehicle } from '../../interfaces/vehicle';
 
 @Component({
   selector: 'app-admin-vehicle-add',
@@ -9,19 +13,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AdminVehicleAddComponent {
   formCreateVehicle: FormGroup;
+  types: TypeVehicle[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private vehicleAPI : ApiVehicleService, private typeVehicleAPI : ApiTypeVehicleService) {
     this.formCreateVehicle = this.fb.group({
       idUser: ['', Validators.required],
       carId: ['', Validators.required],
       typeVehicle: ['', Validators.required],
     });
+    this.typeVehicleAPI.getTypesVehicle().subscribe(data => this.types=data);
+
   }
 
   guardarRespuestas() {
     if (this.formCreateVehicle.valid) {
-      console.log('Formulario válido');
-      console.log('Valores:', this.formCreateVehicle.value);
+      const vehicle : Vehicle ={
+        "placa_vehiculo": this.formCreateVehicle.get('carId')?.value,
+        "id_tipo_vehiculo": this.formCreateVehicle.get('typeVehicle')?.value,
+        "id_propietario": this.formCreateVehicle.get('idUser')?.value
+      }
+      this.vehicleAPI.newVehicle(vehicle).subscribe(data => console.log(data));
+      this.formCreateVehicle.reset()
     } else {
       console.log('Formulario inválido');
     }

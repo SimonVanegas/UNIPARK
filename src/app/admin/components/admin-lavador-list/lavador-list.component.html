@@ -7,21 +7,21 @@
         <tr>
           <th>ID</th>
           <th>Placa</th>
-          <th>Nombre</th>
-          <th>Tipo de Lavado</th>
           <th>Fecha</th>
+          <th>Tipo de Lavado</th>
+          <th>Tarifa</th>
           <th>Aceptar</th>
         </tr>
       </thead>
       <tbody>
         <!-- Repite este bloque para cada persona en la lista -->
-        <tr *ngFor="let client of clients">
-          <td>{{ client.id }}</td>
-          <td>{{ client.carId }}</td>
-          <td>{{ client.name }}</td>
-          <td>{{ client.type }}</td>
-          <td>{{ client.date }}</td>
-          <td><button (click)="aceptarPersona(client.id)" class="btn">Aceptar</button></td>
+        <tr *ngFor="let lavado of lavados">
+          <td>{{ lavado.id_solicitud }}</td>
+          <td>{{ lavado.placa_vehiculo }}</td>
+          <td>{{ lavado.fecha_solicitud | slice: 0:10}}</td>
+          <td>{{ setTipoLavado(lavado.id_tipo_lavado) }}</td>
+          <td>{{ lavado.tarifa }}</td>
+          <td><button (click)="aceptarPersona(lavado.id_solicitud)" class="btn">Aceptar</button></td>
         </tr>
       </tbody>
     </table>

@@ -62,7 +62,6 @@ export class NavAdminComponent {
   showSubOptions: boolean[] = Array(this.menuItems.length).fill(false);
 
   toggleSubOptions(index: number) {
-    console.log(this.menuItems[index])
     if (this.menuItems[index].subOptions) {
       this.showSubOptions[index] = !this.showSubOptions[index];
     }

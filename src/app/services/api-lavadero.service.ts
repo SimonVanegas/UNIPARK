@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
+import { Lavadero } from '../admin/interfaces/lavadero';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,16 @@ export class ApiLavaderoService {
 
   constructor(private http: HttpClient) {}
 
-  newLavadero(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newLavadero(user: Lavadero){
+    return this.http.post<Lavadero>(this.apiUrl, user)
   }
 
-  getLavaderos(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getLavaderos(): Observable<Lavadero[]> {
+    return this.http.get<Lavadero[]>(this.apiUrl);
   }
 
-  getLavadero(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getLavadero(id: number): Observable<Lavadero> {
+    return this.http.get<Lavadero>(`${this.apiUrl}/${id}`);
   }
 
   patchLavadero(user: any): Observable<any> {

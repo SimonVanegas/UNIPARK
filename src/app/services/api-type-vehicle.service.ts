@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
+import { Vehicle } from '../admin/interfaces/vehicle';
+import { TypeVehicle } from '../admin/interfaces/typeVehicle';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +14,16 @@ export class ApiTypeVehicleService {
 
   constructor(private http: HttpClient) {}
 
-  newTypeVehicle(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newTypeVehicle(user: TypeVehicle){
+    return this.http.post<TypeVehicle>(this.apiUrl, user)
   }
 
-  getTypesVehicle(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getTypesVehicle(): Observable<TypeVehicle[]> {
+    return this.http.get<TypeVehicle[]>(this.apiUrl);
   }
 
-  getTypeVehicle(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getTypeVehicle(id: number): Observable<TypeVehicle> {
+    return this.http.get<TypeVehicle>(`${this.apiUrl}/${id}`);
   }
 
   patchTypeVehicle(user: any): Observable<any> {

@@ -1,6 +1,7 @@
 export interface Employees{
-  id: number;
-  name: string;
-  type: number;
-  cel: number;
+  cedula: number;
+  nombres: string;
+  apellidos: string;
+  celular: number;
+  id_tipo_empleado: number;
 }
