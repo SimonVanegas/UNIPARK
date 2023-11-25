@@ -11,9 +11,7 @@ import { WorkerPage } from './worker/worker.module';
 import { UserPage } from './user/user.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,9 +20,9 @@ import { UserPage } from './user/user.module';
     AdminPage,
     lavadorPage,
     WorkerPage,
-    UserPage
+    UserPage,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -28,53 +28,65 @@ import { UserLavaderoReqComponent } from './user/components/user-lavadero-req/us
 import { AdminVehicleInComponent } from './admin/components/admin-vehicle-in/admin-vehicle-in.component';
 import { WorkerVehicleInComponent } from './worker/components/worker-vehicle-in/worker-vehicle-in.component';
 import { UserVehicleInComponent } from './user/components/user-vehicle-in/user-vehicle-in.component';
+import { AdminVehicleRequestSuccessfulComponent } from './admin/components/admin-vehicle-request-successful/admin-vehicle-request-successful.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
-  {path:'home', component:WebPageComponent},
-  {path:'login', component:PageLoginComponent},
-  {path:'admin',
-  component:PageAdminComponent,
-  children:[
-    {path:'create-user', component:AdminUserCreateComponent},
-    {path:'edit-user', component:AdminUserEditComponent},
-    {path:'lavador', component:LavadorListComponent},
-    {path:'create-employee', component:AdminEmployeeCreateComponent},
-    {path:'edit-employee', component:AdminEmployeeEditComponent},
-    {path:'add-vehicle', component:AdminVehicleAddComponent},
-    {path:'request-parking', component:AdminVehicleRequestComponent},
-    {path:'in-parking', component:AdminVehicleInComponent},
-    {path:'out-parking', component:AdminVehicleOutComponent},
-    {path:'bill', component:AdminVehicleBillComponent},
-    {path:'request-lavadero', component:AdminLavaderoRequestComponent},
-
-  ]},
-  {path:'lavador', component:PageLavadorComponent,
-  children:[
-    {path:'list', component:WorkerUserCreateComponent}
-  ]},
-  {path:'worker', component:PageWorkerComponent,
-  children:[
-    {path:'create-user', component:WorkerUserCreateComponent},
-    {path:'edit-user', component:WorkerUserEditComponent},
-    {path:'add-vehicle', component:WorkerVehicleAddComponent},
-    {path:'request-parking', component:WorkerVehicleRequestComponent},
-    {path:'in-parking', component:WorkerVehicleInComponent},
-    {path:'out-parking', component:WorkerVehicleOutComponent},
-    {path:'bill', component:WorkerVehicleBillComponent},
-  ]},
-  {path:'user', component:PageUserComponent,
-  children:[
-    {path:'add-vehicle', component:UserVehicleAddComponent},
-    {path:'request-parking', component:UserVehicleReqComponent},
-    {path:'in-parking', component:UserVehicleInComponent},
-    {path:'request-lavadero', component:UserLavaderoReqComponent},
-  ]},
-
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: WebPageComponent },
+  { path: 'login', component: PageLoginComponent },
+  {
+    path: 'admin',
+    component: PageAdminComponent,
+    children: [
+      { path: 'create-user', component: AdminUserCreateComponent },
+      { path: 'edit-user', component: AdminUserEditComponent },
+      { path: 'lavador', component: LavadorListComponent },
+      { path: 'create-employee', component: AdminEmployeeCreateComponent },
+      { path: 'edit-employee', component: AdminEmployeeEditComponent },
+      { path: 'add-vehicle', component: AdminVehicleAddComponent },
+      { path: 'request-parking', component: AdminVehicleRequestComponent },
+      {
+        path: 'request-parking-successful',
+        component: AdminVehicleRequestSuccessfulComponent,
+      },
+      { path: 'in-parking', component: AdminVehicleInComponent },
+      { path: 'out-parking', component: AdminVehicleOutComponent },
+      { path: 'bill', component: AdminVehicleBillComponent },
+      { path: 'request-lavadero', component: AdminLavaderoRequestComponent },
+    ],
+  },
+  {
+    path: 'lavador',
+    component: PageLavadorComponent,
+    children: [{ path: 'list', component: WorkerUserCreateComponent }],
+  },
+  {
+    path: 'worker',
+    component: PageWorkerComponent,
+    children: [
+      { path: 'create-user', component: WorkerUserCreateComponent },
+      { path: 'edit-user', component: WorkerUserEditComponent },
+      { path: 'add-vehicle', component: WorkerVehicleAddComponent },
+      { path: 'request-parking', component: WorkerVehicleRequestComponent },
+      { path: 'in-parking', component: WorkerVehicleInComponent },
+      { path: 'out-parking', component: WorkerVehicleOutComponent },
+      { path: 'bill', component: WorkerVehicleBillComponent },
+    ],
+  },
+  {
+    path: 'user',
+    component: PageUserComponent,
+    children: [
+      { path: 'add-vehicle', component: UserVehicleAddComponent },
+      { path: 'request-parking', component: UserVehicleReqComponent },
+      { path: 'in-parking', component: UserVehicleInComponent },
+      { path: 'request-lavadero', component: UserLavaderoReqComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

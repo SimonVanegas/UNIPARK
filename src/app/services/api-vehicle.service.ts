@@ -1,38 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Users } from '../admin/interfaces/user';
+import { Vehicle } from '../admin/interfaces/vehicule';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiVehicleService {
-
   private apiUrl = 'https://api-unipark-production.up.railway.app/api/vehiculo';
 
   constructor(private http: HttpClient) {}
 
-  newVehicle(user: Users){
-    return this.http.post<Users>(this.apiUrl, user)
+  newVehicle(vehicle: Vehicle) {
+    return this.http.post<Vehicle>(this.apiUrl, vehicle);
   }
 
-  getVehicles(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl);
+  getVehicles(): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(this.apiUrl);
   }
 
-  getVehicle(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.apiUrl}/${id}`);
+  getVehicle(placa_vehiculo: string): Observable<Vehicle> {
+    return this.http.get<Vehicle>(`${this.apiUrl}/${placa_vehiculo}`);
   }
 
-  patchVehicle(user: any): Observable<any> {
-    return this.http.patch<any>(`${this.apiUrl}/${user.id}`, user, {
-      headers: { 'Content-Type': 'application/json' }
+  patchVehicle(vehicle: any): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/${vehicle.placa_vehiculo}`, vehicle, {
+      headers: { 'Content-Type': 'application/json' },
     });
   }
 
-  deleteVehicle(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deleteVehicle(placa_vehiculo: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${placa_vehiculo}`);
   }
 }
-
-

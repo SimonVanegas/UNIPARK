@@ -1,14 +1,28 @@
 <div class="container">
-  <h3 class="title-option">Parqueadero</h3>
+  <h3 class="title-option">Reserva</h3>
   <h4 class="subtitle-option">Entrada</h4>
-  <form [formGroup]="formRequestVehicle" (ngSubmit)="guardarRespuestas()" class="formCreateUser">
+  <form
+    [formGroup]="formRequestVehicle"
+    (ngSubmit)="guardarRespuestas()"
+    class="formCreateUser"
+  >
     <div class="flex-form">
       <label class="text-form" for="idUser">Cédula:</label>
-      <input class="label-form" type="text" id="idUser" formControlName="idUser">
+      <input
+        class="label-form"
+        type="text"
+        id="idUser"
+        formControlName="idUser"
+      />
     </div>
     <div class="flex-form">
       <label class="text-form" for="carId">Placa:</label>
-      <input class="label-form" type="text" id="carId" formControlName="carId">
+      <input
+        class="label-form"
+        type="text"
+        id="carId"
+        formControlName="carId"
+      />
     </div>
     <!-- <div class="flex-form">
       <label class="text-form" for="name">Nombre:</label>
