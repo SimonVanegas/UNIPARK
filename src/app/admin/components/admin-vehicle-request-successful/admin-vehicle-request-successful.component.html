@@ -1,0 +1,31 @@
+<div class="container">
+  <h3 class="title-option">Reserva</h3>
+  <h4 class="subtitle-option">
+    Señor@ {{ cliente.nombres }} {{ cliente.apellidos }} su solicitud reserva
+    fue exitosa
+  </h4>
+  <div class="cuadrado">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha Reserva</th>
+          <th>Placa</th>
+          <th>Celda Asignada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ data.fecha_reserva }}</td>
+          <td>{{ data.placa_vehiculo }}</td>
+          <td>{{ data.id_celda }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="button-container">
+    <button class="btn btn-primary" (click)="goToHome()">
+      <i class="fa fa-home"></i> Ir al inicio
+    </button>
+  </div>
+</div>

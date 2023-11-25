@@ -4,15 +4,15 @@ import { Observable } from 'rxjs';
 import { Users } from '../admin/interfaces/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiClientService {
   private apiUrl = 'https://api-unipark-production.up.railway.app/api/cliente';
 
   constructor(private http: HttpClient) {}
 
-  newUser(client: Users){
-    return this.http.post<Users>(this.apiUrl, client)
+  newUser(client: Users) {
+    return this.http.post<Users>(this.apiUrl, client);
   }
 
   getUsers(): Observable<Users[]> {
@@ -23,10 +23,9 @@ export class ApiClientService {
     return this.http.get<Users>(`${this.apiUrl}/${cedula}`);
   }
 
-
   patchUser(client: any): Observable<any> {
     return this.http.patch<any>(`${this.apiUrl}/${client.cedula}`, client, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
   }
 
@@ -34,4 +33,3 @@ export class ApiClientService {
     return this.http.delete(`${this.apiUrl}/${cedula}`);
   }
 }
-
