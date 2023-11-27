@@ -37,9 +37,9 @@ export class AdminVehicleRequestComponent {
   guardarRespuestas() {
     if (this.formRequestVehicle.valid) {
       this.reserve = {
+        ...this.reserve,
         fecha_reserva: this.formRequestVehicle.get('date')?.value,
         placa_vehiculo: this.formRequestVehicle.get('carId')?.value,
-        id_celda: null,
       };
 
       let vehicleType: number;
@@ -80,6 +80,6 @@ export class AdminVehicleRequestComponent {
   }
 
   createReserve() {
-    this.reserveAPI.newReserve(this.reserve);
+    this.reserveAPI.newReserve(this.reserve).subscribe();
   }
 }

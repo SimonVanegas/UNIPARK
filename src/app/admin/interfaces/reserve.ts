@@ -4,5 +4,5 @@ export interface Reserve {
   placa_vehiculo: string;
   id_celda: number | null;
   fecha_ingreso?: string;
-  fecha_salida?: string;
+  fecha_salida?: string | null;
 }
