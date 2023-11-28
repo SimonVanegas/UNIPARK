@@ -80,7 +80,7 @@ export class AdminUserEditComponent {
 
       this.showEdit = false;
       this.formEditUser.reset();
-      alert('Usuario creado correctamente')
+      alert('Usuario editado correctamente')
     } else {
       alert('Formulario inválido');
     }
