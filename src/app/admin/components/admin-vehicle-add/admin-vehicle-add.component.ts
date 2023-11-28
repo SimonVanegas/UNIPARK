@@ -34,8 +34,9 @@ export class AdminVehicleAddComponent {
       }
       this.vehicleAPI.newVehicle(vehicle).subscribe(data => console.log(data));
       this.formCreateVehicle.reset()
+      alert('Vehiculo creado correctamente')
     } else {
-      console.log('Formulario inválido');
+      alert('Formulario inválido');
     }
   }
 

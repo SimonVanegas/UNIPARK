@@ -48,8 +48,9 @@ export class AdminUserCreateComponent {
       this.vehicleAPI.newVehicle(vehicle).subscribe(data => console.log(data));
 
       this.formCreateUser.reset()
+      alert('Usuario creado correctamente')
     } else {
-      console.log('Formulario inválido');
+      alert('Formulario inválido');
     }
   }
 }

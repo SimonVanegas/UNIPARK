@@ -68,8 +68,9 @@ export class AdminEmployeeEditComponent {
       this.showEdit = false;
       this.formEditEmployee.reset()
 
+      alert('Empleado editado correctamente')
     } else {
-      console.log('Formulario inválido');
+      alert('Formulario inválido');
     }
   }
 }

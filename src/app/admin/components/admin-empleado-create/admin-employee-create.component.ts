@@ -38,10 +38,12 @@ export class AdminEmployeeCreateComponent {
       }
       this.employeeAPI.newWorker(employee).subscribe(data => console.log(data));
 
-      this.formCreateEmployee.reset()
+      this.formCreateEmployee.reset();
+      alert('Empleado creado correctamente');
     } else {
-      console.log('Formulario inválido');
+      alert('Formulario inválido');
     }
+
   }
 
 }
